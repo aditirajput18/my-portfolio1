@@ -21,6 +21,8 @@ app.post('/api/contact', (req, res) => {
       console.error('Error inserting data:', err);
       return res.status(500).json({ success: false, message: 'Database error' });
     }
+    console.log("Insert success:", result);
+
     res.status(200).json({ success: true, message: 'Message saved!' });
   });
 });
