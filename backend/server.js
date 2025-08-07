@@ -1,9 +1,12 @@
-const express = require('express');
-const cors = require('cors');
-const connection = require('./db');
-require('dotenv').config();
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import connection from './db.js'; // Make sure db.js is also an ES Module
+
+dotenv.config();
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
