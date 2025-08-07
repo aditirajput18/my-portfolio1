@@ -10,7 +10,7 @@ app.use(express.json());
 app.post('/api/contact', (req, res) => {
   const { name, email, message } = req.body;
 
-  const sql = 'INSERT INTO contact_form (name, email, message) VALUES (?, ?, ?)';
+  const sql = 'INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)';
   connection.query(sql, [name, email, message], (err, result) => {
     if (err) {
       console.error('Error inserting data:', err);
