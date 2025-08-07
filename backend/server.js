@@ -11,6 +11,8 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/api/contact', (req, res) => {
+  console.log('Incoming request:', req.body);  // 👈 Add this line
+
   const { name, email, message } = req.body;
 
   const sql = 'INSERT INTO contact_messages (name, email, message) VALUES (?, ?, ?)';
